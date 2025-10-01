@@ -767,5 +767,38 @@ form .btn:hover {
     margin-bottom: 10px;
   }
 }
+/* Content layout */
+.content {
+  display: flex;
+  flex-direction: row;   /* Keep posts + sidebar side-by-side */
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Sidebar style */
+.sidebar {
+  width: 220px;          /* fixed width for sidebar */
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Posts section takes remaining space */
+.posts {
+  flex: 1;
+}
+
+/* Make sure it stays same even on small screens */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: row;  /* prevent stacking on mobile */
+  }
+
+  .sidebar {
+    width: 180px;         /* make it a bit smaller on phones */
+  }
+}
+
+
 
 
