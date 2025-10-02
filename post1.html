@@ -12,17 +12,21 @@
   <header>
     <div class="logo">
   <img src="C:\Users\user\Desktop\Illias  just do it\ChatGPT_Image_Sep_29__2025__11_49_25_AM-removebg-preview.png" alt="Rahman Space Logo"style="width:80px; height:auto;">
-</div>
+<nav class="navbar">
+  <div class="logo">Rahman Space</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="post1.html" class="active">post</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <!-- Hamburger menu -->
+  <div class="menu-toggle" id="menuToggle">&#9776;</div>
+</nav>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="categories.html"></a></li>
-      </ul>
-    </nav>
+
+
   </header>
 
   <!-- Main Post Content -->
@@ -125,6 +129,15 @@ Welcome to my space. This is only the beginning.
   <footer>
     <p>&copy; 2025 Rahman Space | All rights reserved</p>
   </footer>
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+
 </body>
 </html>
 

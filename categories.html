@@ -11,16 +11,19 @@
 
   <!-- Header -->
   <header>
-    <div class="logo">Rahman Space</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="categories.html" class="active">Categories</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+<nav class="navbar">
+  <div class="logo">Rahman Space</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="categories.html" class="active">categories</a></li>
+  </ul>
+  <!-- Hamburger menu -->
+  <div class="menu-toggle" id="menuToggle">&#9776;</div>
+</nav>
+
   </header>
 
   <!-- Categories Section -->
@@ -58,6 +61,16 @@
   <footer>
     <p>&copy; 2025 Rahman Space | All Rights Reserved</p>
   </footer>
+
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+
 
 </body>
 </html>
