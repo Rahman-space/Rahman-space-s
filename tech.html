@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology - My Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Reuse your nav bar here -->
+  <nav class="navbar">
+    <div class="logo">MySite</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="tech.html" class="active">Tech</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+  </nav>
+
+  <!-- Tech Page Content -->
+  <section class="page-header">
+    <h1>Technology</h1>
+    <p>Discover insights, trends, and tips about the world of technology.</p>
+  </section>
+
+  <section class="articles">
+    <article>
+      <h2>The Future of Artificial Intelligence</h2>
+      <p>Artificial Intelligence (AI) is shaping the future of industries, 
+      from healthcare to education. In this article, we explore how AI 
+      impacts daily life and what the future holds.</p>
+      <a href="#">Read More</a>
+    </article>
+
+    <article>
+      <h2>Getting Started with Web Development</h2>
+      <p>Want to become a web developer? Here’s a beginner-friendly 
+      roadmap covering HTML, CSS, JavaScript, and frameworks.</p>
+      <a href="#">Read More</a>
+    </article>
+
+    <article>
+      <h2>Top 5 Tech Gadgets of 2025</h2>
+      <p>From smart wearables to powerful laptops, let’s explore the 
+      must-have gadgets of this year and why they stand out.</p>
+      <a href="#">Read More</a>
+    </article>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MySite. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>
