@@ -960,26 +960,51 @@ footer {
   margin-top: 40px;
 }
 
-/* Responsive Menu */
+/* Mobile Menu Fix */
 @media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
+    gap: 15px;
     background: #222;
     position: absolute;
     top: 60px;
-    right: 20px;
-    width: 200px;
-    border-radius: 5px;
-    padding: 10px;
+    right: 15px;
+    width: 220px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1000;
   }
 
   .nav-links.show {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
+  /* Fix article cards for small screens */
+  .articles {
+    grid-template-columns: 1fr; /* One column only */
+    padding: 20px;
+  }
+
+  .articles article {
+    padding: 15px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .page-header p {
+    font-size: 16px;
   }
 }
-
