@@ -1146,3 +1146,425 @@ footer {
 .nav-links.show {
   display: flex;
 }
+/* Make .logo the container for gradient */
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px; /* ensures some space for background to show */
+  border-radius: 12px;
+  overflow: hidden; /* keep gradient inside */
+  min-height: 80px;
+}
+/* Page reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, Arial, sans-serif; background: #f4f5f7; }
+
+    /* Header wrapper */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* Logo container */
+    .logo {
+      position: relative;        /* required for ::before positioning */
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 14px;         /* visible area for the gradient */
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 1;                /* establish stacking context */
+      min-height: 56px;          /* ensure visible height */
+      min-width: 120px;
+      background: rgba(255,255,255,0.03); /* fallback */
+    }
+
+    /* Animated gradient behind the logo */
+    .logo::before {
+      content: "";
+      position: absolute;
+      inset: 0;                  /* cover full container */
+      background: linear-gradient(270deg,
+        #1e3c72 0%, #2a5298 25%,
+        #00c6ff 50%, #7f00ff 75%, #ff6a00 100%);
+      background-size: 400% 400%;
+      filter: blur(10px);        /* soft glow */
+      transform: scale(1.08);    /* slightly larger so edges don't show */
+      z-index: -1;               /* behind the content */
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Logo image */
+    .logo img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      display: block;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.15);
+      padding: 4px;
+    }
+
+    /* site title text next to logo */
+    .site-title {
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    /* hamburger */
+    .menu-toggle {
+      margin-left: auto;
+      background: transparent;
+      border: 0;
+      font-size: 22px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* nav (desktop default) */
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    nav a { text-decoration:none; color:#333; padding:8px; border-radius:6px; }
+    nav a:hover { background: #eee; }
+
+    /* mobile behaviour - demo only */
+    @media (max-width: 700px) {
+      nav { display: none; } /* hide desktop links */
+      .menu-toggle { display: block; }
+      .mobile-nav {
+        position: fixed;
+        top: 0;
+        left: -260px;               /* hidden by default */
+        width: 250px;
+        height: 100%;
+        background: #111;
+        color: #fff;
+        padding-top: 70px;
+        transition: left .28s ease;
+        z-index: 200;
+      }
+      .mobile-nav.show { left: 0; } /* slide in */
+      .mobile-nav a { display:block; padding:16px 20px; color:#fff; text-decoration:none; }
+      .mobile-nav a:hover { background: rgba(255,255,255,0.04); }
+    }
+    /* Animated header background */
+.animated-bg {
+  position: relative;
+  padding: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Gradient animation layer */
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #00f2fe, #4facfe, #00f2fe);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+  z-index: 0; /* stays in the back */
+  opacity: 0.8; /* makes it subtle */
+  border-radius: 12px;
+}
+
+/* Keep actual content on top of the background */
+.animated-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Animated header background */
+.animated-bg {
+  position: relative;
+  padding: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #00f2fe, #4facfe, #00f2fe);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+  z-index: 0;
+  opacity: 0.85;
+  border-radius: 12px;
+}
+
+.animated-bg > * {
+  position: relative;
+  z-index: 2; /* ensures logo, button, and nav are above the background */
+}
+
+/* Sidebar styles */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* below header */
+  right: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Desktop view - show nav inline */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .nav-links a {
+    margin: 0 15px;
+    color: white; /* looks nice on gradient */
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Background animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Sidebar styles for mobile */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* just below header */
+  right: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  width: 200px;          /* give enough width */
+  max-height: 80vh;      /* prevent overflow */
+  overflow-y: auto;      /* scroll if too many links */
+  z-index: 1000;         /* make sure it stays above */
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  margin: 10px 0;
+  font-weight: 500;
+  display: block; /* ensures links are full width */
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #0d1b2a;  /* Deep navy */
+  color: white;
+  position: relative;
+}
+
+.logo img {
+  max-height: 60px;
+}
+
+/* Hamburger */
+.menu-toggle {
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none; /* hidden on desktop */
+}
+
+/* Sidebar Navigation (Mobile) */
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -260px;   /* hidden off-screen */
+  width: 260px;
+  height: 100%;
+  background: #1b263b;  /* dark blue */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 80px 20px;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+.nav-links.show {
+  right: 0; /* slide in */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e0e1dd;
+  font-size: 18px;
+  padding: 12px 0;
+  width: 100%;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #00b4d8;
+}
+
+/* Desktop Navigation */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav-links {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links a {
+    color: white;
+    font-size: 16px;
+    padding: 0;
+  }
+}
+  
+/* Show Hamburger on Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+.sidebar {
+  background: #1e1e2f;  /* dark background so text shows */
+  padding: 20px;
+  min-height: 30vh;  /* full height */
+}
+
+.sidebar img {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;   /* make text visible */
+  font-weight: 500;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #0d6efd;  /* nice hover effect */
+  color: #fff;
+}
+
