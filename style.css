@@ -1080,3 +1080,52 @@ footer {
     margin: 15px;
   }
 }
+/* Sidebar navigation */
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -250px; /* start hidden outside screen */
+  height: 100%;
+  width: 250px;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  transition: right 0.3s ease-in-out; /* smooth slide */
+  z-index: 1000;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 0;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background: #444;
+}
+
+/* Show sidebar when active */
+.nav-links.show {
+  right: 0;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1100;
+  border-radius: 5px;
+}

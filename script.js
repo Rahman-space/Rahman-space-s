@@ -4,7 +4,7 @@
     const navLinks = document.querySelector(".nav-links");
     const links = document.querySelectorAll(".nav-links a");
 
-    // Toggle sidebar on ☰ click
+    // Toggle sidebar
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("show");
     });
