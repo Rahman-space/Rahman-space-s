@@ -1129,3 +1129,20 @@ footer {
   z-index: 1100;
   border-radius: 5px;
 }
+/* Sidebar default (hidden) */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: #222;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 200px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* When menu is open */
+.nav-links.show {
+  display: flex;
+}

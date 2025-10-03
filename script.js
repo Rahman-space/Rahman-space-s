@@ -1,20 +1,21 @@
   
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
-      const links = document.querySelectorAll(".nav-links a");
+  document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-      });
+  // Toggle menu when clicking hamburger
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
 
-      links.forEach(link => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("show");
-        });
-      });
+  // Close menu when a link is clicked
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
     });
-  </script>
+  });
+});
+
 
 
