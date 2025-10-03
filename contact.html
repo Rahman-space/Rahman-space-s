@@ -12,17 +12,21 @@
   <!-- Header -->
   <header>
 <nav class="navbar">
-  <div class="logo">Rahman Space</div>
-  <ul class="nav-links" id="navLinks">
+  <div class="logo"></div>
+  
+  <!-- Mobile Menu Toggle Button -->
+  <span class="menu-toggle">☰</span>
+  
+  <!-- Navigation Links -->
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="categories.html">Categories</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
-    <li><a href="categories.html">categories</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <!-- Hamburger menu -->
-  <div class="menu-toggle" id="menuToggle">&#9776;</div>
 </nav>
+
 
 
     
@@ -82,14 +86,8 @@
     <p>&copy; 2025 Rahman Space | All Rights Reserved</p>
   </footer>
 
-  <script>
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
+  <script src="script.js"></script>
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
 
 
 </body>

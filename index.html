@@ -14,17 +14,21 @@
     <div class="logo">
   <img src="ChatGPT_Image_Sep_29__2025__11_49_25_AM-removebg-preview.png" alt="Rahman Space Logo"style="width:80px; height:auto;">
 <nav class="navbar">
-  <div class="logo">Rahman Space</div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
+  <div class="logo"></div>
+  
+  <!-- Mobile Menu Toggle Button -->
+  <span class="menu-toggle">☰</span>
+  
+  <!-- Navigation Links -->
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="categories.html">Categories</a></li>
     <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="categories.html">categories</a></li>
   </ul>
-  <!-- Hamburger menu -->
-  <div class="menu-toggle" id="menuToggle">&#9776;</div>
 </nav>
+
 
 
 
@@ -87,14 +91,7 @@
     <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
   </footer>
 
-  <script>
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
+  <script src="script.js"></script>
 
 
 </body>

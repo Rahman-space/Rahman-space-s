@@ -10,16 +10,21 @@
 
   <!-- Reuse your nav bar here -->
   <nav class="navbar">
-    <div class="logo">MySite</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="tech.html" class="active">Tech</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" id="menuToggle">&#9776;</div>
-  </nav>
+  <div class="logo"></div>
+  
+  <!-- Mobile Menu Toggle Button -->
+  <span class="menu-toggle">☰</span>
+  
+  <!-- Navigation Links -->
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
 
   <!-- Tech Page Content -->
   <section class="page-header">
@@ -56,13 +61,7 @@
     <p>&copy; 2025 MySite. All rights reserved.</p>
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.querySelector(".nav-links");
+  <script src="script.js"></script>
 
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
-  </script>
 </body>
 </html>

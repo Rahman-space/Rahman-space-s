@@ -4,22 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rahman Space | Blog</title>
+  <title>Rahman Space </title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
 <nav class="navbar">
-  <div class="logo">Rahman Space</div>
-  <ul class="nav-links" id="navLinks">
+  <div class="logo"></div>
+  
+  <!-- Mobile Menu Toggle Button -->
+  <span class="menu-toggle">☰</span>
+  
+  <!-- Navigation Links -->
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="categories.html">categories</a></li>
   </ul>
-  <!-- Hamburger menu -->
-  <div class="menu-toggle" id="menuToggle">&#9776;</div>
 </nav>
 
   </header>
@@ -35,15 +38,9 @@
       <a href="post1.html">Read More →</a>
     </div>
   </div>
-  <script>
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
+  <script src="script.js"></script>
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
 
 </body>
 </html>
->>>>>>> 27768c285216de1e528a3e00f3fe87b54e36def0
+
