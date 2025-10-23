@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rahman Space</title>
+  <!-- AOS (Animate On Scroll) CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,7 +41,7 @@
   <section class="banner">
     <h1 class="typewriter">Welcome to Rahman Space</h1>
 
-  <p>A place to share learning, faith, life, tech, and inspiration.</p>
+  <p data-aos="fade-right">A place to share learning, faith, life, tech, and inspiration.</p>
   </section>
 
   <!-- Featured Posts -->
@@ -49,7 +51,7 @@
   <div class="featured-post">
     <img src="IMG_1922.jpg" alt="Featured Post 1" style="width: 250px; height: auto;">
     <div class="featured-text">
-      <h2>My Journey Into Tech:</h2>
+      <h2 data-aos="fade-up">My Journey Into Tech:</h2>
       <a href="post1.html" class="btn">Read More</a>
     </div>
   </div>
@@ -102,5 +104,21 @@
     <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
   </footer>
 <script src="script.js"></script>
+<!-- AOS (Animate On Scroll) JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<button id="backToTop">⬆</button>
+
+<script>
+  const btn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+</script>
+
+
 </body>
 </html>

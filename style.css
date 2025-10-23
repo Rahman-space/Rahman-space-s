@@ -162,6 +162,22 @@ header nav ul li a {
 .latest {
   margin: 20px;
 }
+.btn {
+  display: inline-block;
+  background-color: #0066ff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background-color: gold;
+  color: #333;
+}
+
 
 .latest h2 {
   text-align: center;
@@ -313,27 +329,27 @@ footer a:hover {
   0%, 100% { filter: drop-shadow(0 0 10px gold); }
   50% { filter: drop-shadow(0 0 25px orange); }
 }*/
+
 .typewriter {
-  font-family: "Courier New", monospace;
-  display: inline-block;
-  font-size: 2.4rem;
-  color: #222;
-  white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid rgba(0,0,0,0.7); /* caret */
-  animation:
-    typing 3.5s steps(28, end),
-    blink-caret 0.8s step-end infinite;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
+  color: white;
+  font-size: 3rem;
 }
 
-/* adjust steps() to match length of text for perfect effect */
 @keyframes typing {
   from { width: 0; }
-  to   { width: 100%; }
+  to { width: 100%; }
 }
-@keyframes blink-caret {
-  50% { border-color: transparent; }
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
 }
+
 
 /* fallback for reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -1612,5 +1628,23 @@ header {
     font-size: 1.6rem;
   }
 }
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border: none;
+  background: #444;
+  color: white;
+  border-radius: 5px;
+  display: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+#backToTop:hover {
+  background: gold;
+  color: #333;
+}
+
 
 
